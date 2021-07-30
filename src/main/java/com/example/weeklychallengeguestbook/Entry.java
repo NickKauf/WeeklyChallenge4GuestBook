@@ -4,7 +4,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-public class Employee {
+public class Entry {
     @NotNull
     @Min(1)
     private long id;

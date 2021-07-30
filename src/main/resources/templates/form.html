@@ -15,7 +15,7 @@
         Sign the guestbook
     </div>
     <div class="m-3">
-    <form th:action="@{/display}" th:object="${employee}"
+    <form th:action="@{/display}" th:object="${entry}"
           method="post">
         <input type="hidden" th:field="*{id}">
         <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>

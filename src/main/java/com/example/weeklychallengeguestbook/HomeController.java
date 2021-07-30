@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class HomeController {
     public static long idCounter = 0;
 
-    ArrayList<Employee> guestbook = new ArrayList<>();
+    ArrayList<Entry> guestbook = new ArrayList<>();
 
     @RequestMapping("/")
     public String goHome(){
@@ -23,14 +23,14 @@ public class HomeController {
 
     @GetMapping("/add")
     public String addEntry(Model model){
-        Employee newEmployee = new Employee();
-        idSetter(newEmployee);
-        model.addAttribute("employee", newEmployee);
+        Entry newEntry = new Entry();
+        idSetter(newEntry);
+        model.addAttribute("entry", newEntry);
         return "form";
     }
 
     @PostMapping("/display")
-    public String displayEntry(@Valid Employee employee,
+    public String displayEntry(@Valid Entry employee,
                                   BindingResult result){
         if (result.hasErrors()) {
             return "form";
@@ -47,9 +47,9 @@ public class HomeController {
     }
 
 
-    static void idSetter(Employee gbEntry){
+    static void idSetter(Entry newEntry){
         idCounter = idCounter + 1;
-        gbEntry.setId(idCounter);
+        newEntry.setId(idCounter);
     }
 }
 

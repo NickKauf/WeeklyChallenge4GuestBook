@@ -18,11 +18,11 @@
         <th>Message</th>
 
     </tr>
-    <tr th:each="employee: ${guestbook}">
-        <td th:text="${employee.id}" />
-        <td th:text="${employee.name}" />
-        <td th:text="${employee.date}" />
-        <td><p style="width:100px" th:text="${employee.wishes}"></p></td>
+    <tr th:each="entry: ${guestbook}">
+        <td th:text="${entry.id}" />
+        <td th:text="${entry.name}" />
+        <td th:text="${entry.date}" />
+        <td><p style="width:100px" th:text="${entry.wishes}"></p></td>
     </tr>
 </table>
 <div>
